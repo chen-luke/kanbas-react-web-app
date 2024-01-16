@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Assignment Template</title>
+</head>
+
+<body>
+    <select name="what are these things called?" id="">
+        <option value="SPEEDGRADER" selected>SpeedGrader</option>
+        <option value="TEST">Test 1</option>
+    </select>
+    <div>⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</div>
+    <h2>Assignment Name</h2>
+    <input type="text" placeholder="A1 - ENV + HTML"><br><br>
+    <textarea name="" id="" cols="30" rows="2" placeholder="This is the assignment description."></textarea><br><br>
+    <label>Points<br><input type="text" placeholder="100"></label><br><br>
+    <!--Should I link the for with the selection below? If so what should the selection id be? Ask TA-->
+    <!--Change all valign top to tr not td!-->
+    <label for="">
+        Assignment Group
+        <br>
+        <select>
+            <option value="ASSIGMENTS" selected>ASSIGNMENTS</option>
+        </select>
+    </label><br><br>
+    <label for="">
+        Display Grade as
+        <br>
+        <select>
+            <option value="PERCENTAGE" selected>Percentage</option>
+        </select>
+    </label><br><br>
+    <label for="">
+        Submission Type
+        <br>
+        <select>
+            <option value="ONLINE" selected>Online</option>
+        </select>
+    </label><br><br>
+    <label>Online Entry Options</label><br>
+    <input id="opt-text-entry" type="checkbox" name="NAME1" value="OPTION1"><label for="opt-text-entry">Text
+        Entry</label><br>
+    <input id="opt-web-url" type="checkbox" name="NAME2" value="OPTION2"><label for="opt-web-url">Website
+        URL</label><br>
+    <input id="opt-media-rec" type="checkbox" name="NAME3" value="OPTION3"><label for="opt-media-rec">Media
+        Recordings</label><br>
+    <input id="opt-stdt-anno" type="checkbox" name="NAME4" value="OPTION4"><label for="opt-stdt-anno">Student
+        Annotation</label><br>
+    <input id="opt-file-upload" type="checkbox" name="NAME5" value="OPTION5"><label for="opt-file-upload">File
+        Uploads</label><br>
+    <br>
+    <label for="assign-to">Assign <br>Assign to</label><br>
+    <input id="assign-to" type="text" placeholder="Everyone"><br>
+    <br>
+    <label for="due">
+        Due
+        <br>
+        <input id="due" type="date" value="2021-01-01"></label>
+    <br><br>
+    <label for="avil-from">
+        Available from
+        <br>
+        <input id="avil-from" type="date" value="2021-01-01"></label>
+    <br><br>
+    <label for="date">
+        Until
+        <br>
+        <input id="date" type="date" value="2021-01-01"></label>
+    <br><br>
+    <button type="button">Cancel</button>
+    <button type="button">Save</button>
+</body>
+
+</html>
