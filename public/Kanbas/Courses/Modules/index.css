@@ -31,11 +31,7 @@
   margin-bottom: 20px;
 }
 
-.module-top-buttons {
-    width: 70%;
-    float: right;
-}
-
-.break {
-    clear:right;
+.wd-top-dropdown > i {
+  margin-left: 20px;
+  margin-right: 3px;
 }

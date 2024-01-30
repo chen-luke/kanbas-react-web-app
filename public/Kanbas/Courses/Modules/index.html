@@ -12,21 +12,20 @@
 
 <body>
     <!-- Implement buttons Collapse All, View Progress, etc. here -->
-    <div class="module-top-buttons row">
-        <div class="col"><button type="button" class="btn btn-sm btn-primary btn-light">Collapse All</button></div>
-        <div class="col"><button type="button" class="btn btn-sm btn-primary btn-light">View Progress</button></div>
-        <div class="col">
-            <div>
-                <i class="fa fa-check-circle text-success"></i>
-                <select id="select-one-genre" class="form-select form-select-sm">
+    <div class="d-flex justify-content-end flex-nowrap">
+        <div class="col col-md-1"><button type="button" class="btn btn-sm btn-primary btn-light">Collapse All</button></div>
+        <div class="col col-md-1"><button type="button" class="btn btn-sm btn-primary btn-light ms-1" style="white-space: nowrap;">View Progress</button></div>
+        <div class="col col-md-2">
+            <div class="d-flex justify-content-end align-items-center">
+                <i class="fa fa-check-circle text-success ms-4 me-1"></i>
+                <select id="select-one-genre" class="form-select form-select-sm me-3">
                     <option selected="PUBLISH ALL">Publish All</option>
                 </select>
             </div>
         </div>
-        <div class="col">
-            <button type="button" class="btn btn-sm btn-primary btn-danger">+ Module</button>
-            <button class="btn btn-sm btn-primary btn-light"><i class="fa fa-ellipsis-v"></i></button>
-        </div>
+        <button type="button" class="btn btn-sm btn-primary btn-danger">+ Module</button>
+        <button class="btn btn-sm btn-primary btn-light"><i class="fa fa-ellipsis-v"></i></button>
+
 
 
 
@@ -36,7 +35,7 @@
     <ul class="list-group wd-modules">
         <li class="list-group-item">
             <div>
-                <i class="fa fa-ellipsis-v"></i> Week 0 -INTRO
+                <i class="fa fa-ellipsis-v me-2"></i> Week 0 -INTRO
                 <span class="float-end">
                     <i class="fa fa-check-circle text-success"></i>
                     <i class="fa fa-plus ms-2"></i>
@@ -45,19 +44,19 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <i class="fa fa-ellipsis-v"></i> Learning Objectives
+                    <i class="fa fa-ellipsis-v me-2"></i> Learning Objectives
                     <span class="float-end">
                         <i class="fa fa-check-circle text-success"></i>
                         <i class="fa fa-ellipsis-v ms-2"></i>
                     </span>
                     <ul>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Introduction to the course</li>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Learning what is Web Development
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Introduction to the course</li>
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Learning what is Web Development
                         </li>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Creating a development environment
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Creating a development environment
                         </li>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Creating a Web Application</li>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Getting started with the 1st
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Creating a Web Application</li>
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Getting started with the 1st
                             assignment</li>
                     </ul>
                 </li>
@@ -65,7 +64,7 @@
         </li>
         <li class="list-group-item">
             <div>
-                <i class="fa fa-ellipsis-v"></i> Week 1 - HTML
+                <i class="fa fa-ellipsis-v me-2"></i> Week 1 - HTML
                 <span class="float-end">
                     <i class="fa fa-check-circle text-success"></i>
                     <i class="fa fa-plus ms-2"></i>
@@ -74,16 +73,16 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <i class="fa fa-ellipsis-v"></i> Learning Objectives
+                    <i class="fa fa-ellipsis-v me-2"></i> Learning Objectives
                     <span class="float-end">
                         <i class="fa fa-check-circle text-success"></i>
                         <i class="fa fa-ellipsis-v ms-2"></i>
                     </span>
                     <ul>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Learn how to create user interfaces
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Learn how to create user interfaces
                             with HTML</li>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Keep working on assignment 1</li>
-                        <li class="list-group-item"><i class="fa fa-ellipsis-v"></i>Deploy the assignment to Netlify
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Keep working on assignment 1</li>
+                        <li class="list-group-item"><i class="fa fa-ellipsis-v me-4"></i>Deploy the assignment to Netlify
                         </li>
                     </ul>
                 </li>
