@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../Navigation/index.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../../libs/font-awesome/css/font-awesome.min.css" />
@@ -12,26 +13,34 @@
 </head>
 
 <body>
-    <table width="100%">
-        <tbody valign="top">
-            <tr>
-                <td >
-                    <ul class="wd-kanbas-navigation">
-                        <li><a href="http://northeastern.edu"><img src="../../imgs/logo.png" alt="Northeastern Logo" id="logo"></a></li>
-                        <li><a href="/Kanbas/Account/Navigation/Profile/screen.html"><i class="fa fa-user-circle-o"></i>Account</a></li>
-                        <li><a href="/Kanbas/Dashboard/screen.html"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-                        <li class="wd-active"><a href="../../Courses/Home/screen.html"><i class="fa fa-book"></i>Courses</a></li>
-                        <li><a href="/Kanbas/Calendar/index.html"><i class="fa fa-calendar"></i> Calendar</a></li>
-                        <li><a href="/Kanbas/Inbox/index.html"><i class="fa fa-inbox"></i><br>Inbox</a></li>
-                        <li><a href="#"><i class="fa fa-clock-o"></i>History</a></li>
-                        <li><a href="#"><i class="fa fa-film"></i>Studio</a></li>
-                        <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Commons</a></li>
-                        <li><a href="#"><i class="fa fa-question-circle-o"></i><br>Help</a></li>
-                    </ul>
-                </td>
-                <td >
+    <div class="d-flex">
+        <div class="d-none d-md-block">
+            <ul class="wd-kanbas-navigation">
+                <li><a href="http://northeastern.edu"><img src="../../../imgs/logo.png" alt="Northeastern Logo"
+                            id="logo"></a></li>
+                <li><a href="/Kanbas/Account/Navigation/Profile/screen.html"><i
+                            class="fa fa-user-circle-o"></i>Account</a></li>
+                <li><a href="/Kanbas/Dashboard/screen.html"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                <li class="wd-active"><a href="../../Courses/Home/screen.html"><i class="fa fa-book"></i>Courses</a>
+                </li>
+                <li><a href="/Kanbas/Calendar/index.html"><i class="fa fa-calendar"></i> Calendar</a></li>
+                <li><a href="/Kanbas/Inbox/index.html"><i class="fa fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="#"><i class="fa fa-clock-o"></i>History</a></li>
+                <li><a href="#"><i class="fa fa-film"></i>Studio</a></li>
+                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Commons</a></li>
+                <li><a href="#"><i class="fa fa-question-circle-o"></i><br>Help</a></li>
+            </ul>
+        </div>
+        <div class="flex-grow-1 mt-4">
+            <div class="d-flex justify-content-between">
+                <h4 class="ms-4"><i class="fa fa-bars me-4"></i>Home</h4>
+                <button class="btn btn-sm btn-light me-4"><i class="fa fa-headphones me-2"></i>Immersive Reader</button>
+            </div>
+            <hr>
+            <div class="d-flex pb-5 mb-5">
+                <div class="d-none d-md-block">
                     <ul class="wd-navigation">
-                        <li><a href="../../Courses/Home/screen.html">Home</a></li>
+                        <li><a href="../../Home/screen.html">Home</a></li>
                         <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
                         <li><a href="/Kanbas/Courses/Piazza/index.html">Piazza</a></li>
                         <li><a href="/Kanbas/Courses/Grades/screen.html">Zoom Meetings</a></li>
@@ -50,98 +59,113 @@
                         <li><a href="/Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
                         <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
                     </ul>
-                </td>
-                <td >
-                    <br>
-                    <select name="" id="">
-                        <option value="GRADE">Gradebook</option>
-                        <option value="TEST">Test 1</option>
-                    </select>
-                    <button type="button">Import</button>
-                    <select name="" id="">
-                        <option value="EXPORT">Export</option>
-                        <option value="TEST">Test 1</option>
-                    </select>
-                    <button type="button">Configure</button>
-                    <h2>Student Names</h2>
-                    <input type="search" placeholder="Search Students">
-                    <h2>Assignment Names</h2>
-                    <input type="search" placeholder="Search Assignments">
-                    <br/>
-                    <br/>
-                    <button type="button">Apply Filters</button>
-                    <br/>
-                    <br/>
-                    <table border="1" width="100%" style="text-align: center;">
-                        <thead>
-                            <tr>
-                                <th>Student Name</th>
-                                <th>A1 SETUP out of 100</th>
-                                <th>A2 HTML out of 100</th>
-                                <th>A3 CSS out of 100</th>
-                                <th>A4 BOOTSTRAP out of 100</th>
-                                <th>A5 JAVASCRIPT out of 100</th>
-                                <th>A6 REACT out of 100</th>
-                                <th>A7 REDUX out of 100</th>
-                                <th>A8 NODE out of 100</th>
-                                <th>A9 MONGO out of 100</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Alice Wonderland</td>
-                                <td>98</td>
-                                <td align="center">89</td>
-                                <td align="center">87</td>
-                                <td align="center">90</td>
-                                <td><input type="number" min="0" max="100" placeholder="99" size="4"></td>
-                                <td align="center">94</td>
-                                <td align="center">88</td>
-                                <td align="center">87</td>
-                                <td align="center">100</td>
-                            </tr>
-                            <tr>
-                                <td>Princess Leia</td>
-                                <td align="center">98</td>
-                                <td align="center">80</td>
-                                <td align="center">87</td>
-                                <td align="center">86</td>
-                                <td align="center">100</td>
-                                <td align="center">94</td>
-                                <td align="center"><input type="number" min="0" max="100" size="4" placeholder="99"></td>
-                                <td align="center">84</td>
-                                <td align="center">92</td>
-                            </tr>
-                            <tr>
-                                <td>Luke Skywalker</td>
-                                <td align="center">99</td>
-                                <td align="center">100</td>
-                                <td align="center">99</td>
-                                <td align="center"><input type="number" min="0" max="100" size="4" placeholder="99"></td>
-                                <td align="center">100</td>
-                                <td align="center"><input type="number" min="0" max="100" size="4" placeholder="99"></td>
-                                <td align="center">99</td>
-                                <td align="center">100</td>
-                                <td align="center">100</td>
-                            </tr>
-                            <tr>
-                                <td>Han Solo</td>
-                                <td align="center">98</td>
-                                <td align="center">100</td>
-                                <td align="center">100</td>
-                                <td align="center">99</td>
-                                <td align="center"><input type="number" min="0" max="100" placeholder="99" size="4"></td>
-                                <td align="center">100</td>
-                                <td align="center">100</td>
-                                <td align="center"><input type="number" min="0" max="100" placeholder="99" size="4"></td>
-                                <td align="center">100</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+                <div class="flex-fill col-10 px-5">
+                    <div class="d-flex justify-content-end gap-2">
+                        <div><button class="btn btn-light"><i class="fa fa-upload me-2"></i>Import</button></div>
+                        <div>
+                            <select class="form-select" name="" id="">
+                                <option value="">Export</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn btn-light"><i class="fa fa-gear"></i></button>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-md-6">
+                            <h5>Student Names</h5>
+                            <select class="form-select" name="" id="">
+                                <option value="">Search Students</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h5>Assignment Names</h5>
+                            <select class="form-select" name="" id="">
+                                <option value="">Search Assignments</option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <button class="btn btn-light"><i class="fa fa-filter me-2"></i>Apply Filters</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive mt-4">
+                        <table class="table table-hover table-bordered table-striped align-middle ">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="font-weight-normal">Student Name</th>
+                                    <th>A1 SETUP out of 100</th>
+                                    <th>A2 HTML out of 100</th>
+                                    <th>A3 CSS out of 100</th>
+                                    <th>A4 BOOTSTRAP out of 100</th>
+                                    <th>A5 JAVASCRIPT out of 100</th>
+                                    <th>A6 REACT out of 100</th>
+                                    <th>A7 REDUX out of 100</th>
+                                    <th>A8 NODE out of 100</th>
+                                    <th>A9 MONGO out of 100</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"class="text-danger">Alice Wonderland</th>
+                                    <td class="text-center">98%</td>
+                                    <td class="text-center">89%</td>
+                                    <td class="text-center">87%</td>
+                                    <td class="text-center">90%</td>
+                                    <td class="text-center"><input class="form-control" type="number" min="0" max="100" placeholder="99%" size="4"></td>
+                                    <td class="text-center">94%</td>
+                                    <td class="text-center">88%</td>
+                                    <td class="text-center">87%</td>
+                                    <td class="text-center">100%</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-danger">Princess Leia</th>
+                                    <td class="text-center">98%</td>
+                                    <td class="text-center">80%</td>
+                                    <td class="text-center">87%</td>
+                                    <td class="text-center">86%</td>
+                                    <td class="text-center">100%</td>
+                                    <td class="text-center">94%</td>
+                                    <td><input class="form-control" type="number" min="0" max="100" size="4" placeholder="99%">
+                                    </td>
+                                    <td class="text-center">84%</td>
+                                    <td class="text-center">92%</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-danger">Luke Skywalker</th>
+                                    <td class="text-center">99%</td>
+                                    <td class="text-center">100%</td>
+                                    <td class="text-center">99%</td>
+                                    <td class="text-center"><input class="form-control" type="number" min="0" max="100" size="4" placeholder="99%">
+                                    </td>
+                                    <td class="text-center">100%</td>
+                                    <td><input class="form-control" type="number" min="0" max="100" size="4" placeholder="99%">
+                                    </td>
+                                    <td class="text-center">99%</td>
+                                    <td class="text-center">100%</td>
+                                    <td class="text-center">100%</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-danger">Han Solo</th>
+                                    <td class="text-center">98%</td>
+                                    <td class="text-center">100%</td>
+                                    <td class="text-center">100%</td>
+                                    <td class="text-center">99%</td>
+                                    <td><input class="form-control" type="number" min="0" max="100" placeholder="99%" size="4">
+                                    </td>
+                                    <td class="text-center">100%</td>
+                                    <td class="text-center">100%</td>
+                                    <td><input class="form-control" type="number" min="0" max="100" placeholder="99%" size="4">
+                                    </td>
+                                    <td class="text-center">100%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

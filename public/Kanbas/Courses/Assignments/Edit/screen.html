@@ -8,11 +8,149 @@
     <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="../../../../libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../../Navigation/index.css">
+    <link rel="stylesheet" href="../../../../libs/bootstrap/bootstrap.min.css">
     <title>Edit Assingment</title>
 </head>
 
 <body>
-    <table width="100%">
+    <div class="d-flex">
+        <div class="d-none d-md-block">
+            <ul class="wd-kanbas-navigation">
+                <li><a href="http://northeastern.edu"><img src="../../../imgs/logo.png" alt="Northeastern Logo"
+                            id="logo"></a></li>
+                <li><a href="/Kanbas/Account/Navigation/Profile/screen.html"><i
+                            class="fa fa-user-circle-o"></i>Account</a></li>
+                <li><a href="/Kanbas/Dashboard/screen.html"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                <li class="wd-active"><a href="../../Courses/Home/screen.html"><i class="fa fa-book"></i>Courses</a>
+                </li>
+                <li><a href="/Kanbas/Calendar/index.html"><i class="fa fa-calendar"></i> Calendar</a></li>
+                <li><a href="/Kanbas/Inbox/index.html"><i class="fa fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="#"><i class="fa fa-clock-o"></i>History</a></li>
+                <li><a href="#"><i class="fa fa-film"></i>Studio</a></li>
+                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Commons</a></li>
+                <li><a href="#"><i class="fa fa-question-circle-o"></i><br>Help</a></li>
+            </ul>
+        </div>
+        <div class="flex-grow-1 mt-4">
+            <div class="d-flex justify-content-between">
+                <h4 class="ms-4"><i class="fa fa-bars me-4"></i>Home</h4>
+                <button class="btn btn-sm btn-light me-4"><i class="fa fa-headphones me-2"></i>Immersive Reader</button>
+            </div>
+            <hr>
+            <div class="d-flex pb-5 mb-5">
+                <div class="d-none d-md-block">
+                    <ul class="wd-navigation">
+                        <li><a href="../../Home/screen.html">Home</a></li>
+                        <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
+                        <li><a href="/Kanbas/Courses/Piazza/index.html">Piazza</a></li>
+                        <li><a href="/Kanbas/Courses/Grades/screen.html">Zoom Meetings</a></li>
+                        <li class="wd-active"><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                        <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                        <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                        <li><a href="/Kanbas/Courses/People/screen.html">People</a></li>
+                        <li><a href="/Kanbas/Courses/PanoptoVideo/screen.html">Panopto Video</a></li>
+                        <li><a href="/Kanbas/Courses/Discussions/screen.html">Discussions</a></li>
+                        <li><a href="/Kanbas/Courses/Announcements/screen.html">Announcements</a></li>
+                        <li><a href="/Kanbas/Courses/Pages/screen.html">Pages</a></li>
+                        <li><a href="/Kanbas/Courses/Files/screen.html">Files</a></li>
+                        <li><a href="/Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
+                        <li><a href="/Kanbas/Courses/Outcomes/screen.html">Outcomes</a></li>
+                        <li><a href="/Kanbas/Courses/Collaborations/screen.html">Collaborations</a></li>
+                        <li><a href="/Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
+                        <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col col-sm-12 col-md-10 col-lg-7 col-xl-8 col-xxl-4 px-5">
+                    <select class="mt-4 form-select" id="">
+                        <option value="SPEEDGRADER" selected>SpeedGrader</option>
+                        <option value="TEST">Test 1</option>
+                    </select>
+
+                    <h3 class="mt-4">Assignment Name</h3>
+
+                    <input class="form-control form-control-sm mt-4" type="text" placeholder="A1 - ENV + HTML">
+
+                    <textarea class="form-control mt-2" id="" cols="30" rows="6"
+                        placeholder="This is the assignment description.">
+                    </textarea>
+
+                    <label class="col-12 mt-4">Points
+                        <input class="form-control" type="text" placeholder="100">
+                    </label>
+
+                    <label class="col-12 mt-4" for="wd-assignment-select">
+                        Assignment Group
+                        <select class="form-select">
+                            <option value="ASSIGMENTS" selected>Assignments</option>
+                        </select>
+                    </label>
+
+                    <label class="col-12 mt-4" for="">
+                        Display Grade as
+                        <br>
+                        <select class="form-select">
+                            <option value="PERCENTAGE" selected>Percentage</option>
+                        </select>
+                    </label>
+                    <label class="col-12 mt-4" for="">
+                        Submission Type
+                        <br>
+                        <select class="form-select">
+                            <option value="ONLINE" selected>Online</option>
+                        </select>
+                    </label><br><br>
+                    <label>Online Entry Options</label>
+                    <div class="form-check-group">
+                        <input class="form-check-input" id="opt-text-entry" type="checkbox" name="NAME1"
+                            value="OPTION1">
+                        <label class="form-check-label" for="opt-text-entry">Text
+                            Entry
+                        </label>
+                        <br>
+                        <input class="form-check-input" id="opt-web-url" type="checkbox" name="NAME2" value="OPTION2">
+                        <label class="form-check-label" for="opt-web-url">Website
+                            URL
+                        </label>
+                        <br>
+                        <input class="form-check-input" id="opt-media-rec" type="checkbox" name="NAME3" value="OPTION3">
+                        <label class="form-check-label" for="opt-media-rec">Media
+                            Recordings</label>
+                        <br>
+                        <input class="form-check-input" id="opt-stdt-anno" type="checkbox" name="NAME4" value="OPTION4">
+                        <label class="form-check-label" for="opt-stdt-anno">Student
+                            Annotation</label>
+                        <br>
+                        <input class="form-check-input" id="opt-file-upload" type="checkbox" name="NAME5"
+                            value="OPTION5">
+                        <label class="form-check-label" for="opt-file-upload">File
+                            Uploads</label>
+                            <br>
+                    </div>
+                    <label class="mt-4" for="assign-to">Assign<br>Assign to</label><br>
+                    <input class="form-control" id="assign-to" type="text" placeholder="Everyone"><br>
+                    <label for="due">
+                        Due
+                        <br>
+                        <input class="form-control" id="due" type="date" value="2021-01-01"></label>
+                    <br><br>
+                    <label for="avil-from">
+                        Available from
+                        <br>
+                        <input class="form-control" id="avil-from" type="date" value="2021-01-01"></label>
+                    <br><br>
+                    <label for="date">
+                        Until
+                        <br>
+                        <input class="form-control" id="date" type="date" value="2021-01-01"></label>
+                    <br><br>
+                    <a href="../screen.html"><button class="btn btn-light" type="button">Cancel</button></a>
+                    <a href="../screen.html"><button class="btn btn-light" type="button">Save</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <table width="100%">
+
         <tbody>
             <tr valign="top">
                 <td>
@@ -62,8 +200,7 @@
                     <input type="text" placeholder="A1 - ENV + HTML"><br><br>
                     <textarea name="" id="" cols="30" rows="2" placeholder="This is the assignment description."></textarea><br><br>
                     <label>Points<br><input type="text" placeholder="100"></label><br><br>
-                    <!--Should I link the for with the selection below? If so what should the selection id be? Ask TA-->
-                    <!--Change all valign top to tr not td!-->
+
                     <label for="">
                         Assignment Group
                         <br>
@@ -120,7 +257,7 @@
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
 </body>
 
 </html>
