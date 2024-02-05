@@ -36,9 +36,9 @@
   margin-right: 3px;
 }
 
-button[aria-expanded=true] .fa-chevron-up{
+button[aria-expanded=false] .fa-chevron-up{
     display: none;
  }
-button[aria-expanded=false] .fa-chevron-down{
+button[aria-expanded=true] .fa-chevron-down{
   display: none;
 }
