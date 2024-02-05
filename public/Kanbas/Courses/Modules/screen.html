@@ -17,7 +17,7 @@
 <body>
     <div class="d-flex">
         <div class="d-md-block ">
-            <ul class="wd-kanbas-navigation collapse wd-close-both-nav d-md-block" id="kanbasNav">
+            <ul class="wd-kanbas-navigation collapse d-md-block" id="kanbasNav">
                 <li><a href="http://northeastern.edu"><img src="../../imgs/logo.png" alt="Northeastern Logo"
                             id="logo"></a></li>
                 <li><a href="/Kanbas/Account/Navigation/Profile/screen.html"><i
@@ -42,17 +42,17 @@
                 <div class="d-flex flex-grow-1 justify-content-between">
                     <h4 class="ms-4">Modules</h4>
                     <div class="d-block d-md-none">
-                        <button class="btn btn-sm btn-light me-4" id="courseDropBtn" data-bs-toggle="collapse" data-bs-target=".wd-close-courNav"
+                        <button class="btn btn-sm btn-light me-4 py-2" id="courseDropBtn" data-bs-toggle="collapse" data-bs-target=".wd-close-courNav"
                             aria-expanded="false" aria-controls="wd-close-courNav">
-                            <i class="fa fa-chevron-down"></i>
-                            <i class="fa fa-chevron-up"></i>
+                            <i class="fa collapse show fa-chevron-down .wd-close-courNav" close="true"></i>
+                            <i class="fa collapse fa-chevron-up .wd-close-courNav" close="false"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="d-flex">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-1 d-md-block collapse wd-close-both-nav wd-close-courNav" id="courseNav">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-1 d-md-block collapse wd-close-courNav" id="courseNav">
                     <ul class="wd-navigation">
                         <li><a href="../../Courses/Home/screen.html">Home</a></li>
                         <li class="wd-active"><a href="../../Courses/Modules/screen.html">Modules</a></li>
