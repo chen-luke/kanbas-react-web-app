@@ -35,3 +35,10 @@
   margin-left: 20px;
   margin-right: 3px;
 }
+
+button[aria-expanded=true] .fa-chevron-up{
+    display: none;
+ }
+button[aria-expanded=false] .fa-chevron-down{
+  display: none;
+}
