@@ -17,7 +17,7 @@
 <body>
     <div class="d-flex">
         <div class="d-md-block ">
-            <ul class="wd-kanbas-navigation collapse d-md-block" id="kanbasNav">
+            <ul class="wd-kanbas-navigation d-none d-md-block">
                 <li><a href="http://northeastern.edu"><img src="../../imgs/logo.png" alt="Northeastern Logo"
                             id="logo"></a></li>
                 <li><a href="/Kanbas/Account/Navigation/Profile/screen.html"><i
@@ -26,17 +26,18 @@
                 <li class="wd-active"><a href="../../Courses/Home/screen.html"><i class="fa fa-book"></i>Courses</a>
                 </li>
                 <li><a href="/Kanbas/Calendar/index.html"><i class="fa fa-calendar"></i> Calendar</a></li>
-                <li><a href="/Kanbas/Inbox/index.html"><i class="fa fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="/Kanbas/Inbox/index.html"><i class="d-block fa fa-inbox"></i>Inbox</a></li>
                 <li><a href="#"><i class="fa fa-clock-o"></i>History</a></li>
                 <li><a href="#"><i class="fa fa-film"></i>Studio</a></li>
                 <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Commons</a></li>
-                <li><a href="#"><i class="fa fa-question-circle-o"></i><br>Help</a></li>
+                <li><a href="#"><i class="d-block fa fa-question-circle-o"></i>Help</a></li>
             </ul>
         </div>
+
         <div class="flex-grow-1 mt-4">
             <div class="d-flex ms-4">
-                <button class="btn btn-light d-block d-md-none " data-bs-toggle="collapse" data-bs-target="#kanbasNav"
-                    aria-expanded="false" aria-controls="wd-close-courNav">
+                <button class="btn btn-light d-block d-md-none" id="hamburger" data-bs-toggle="collapse" data-bs-target=".kanbasNavMobile"
+                    aria-expanded="false" aria-controls="kanbasNavMobile">
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="d-flex flex-grow-1 justify-content-between">
@@ -44,16 +45,31 @@
                     <div class="d-block d-md-none">
                         <button class="btn btn-sm btn-light me-4 py-2" id="courseDropBtn" data-bs-toggle="collapse" data-bs-target=".wd-close-courNav"
                             aria-expanded="false" aria-controls="wd-close-courNav">
-                            <i class="fa collapse show fa-chevron-down .wd-close-courNav" close="true"></i>
-                            <i class="fa collapse fa-chevron-up .wd-close-courNav" close="false"></i>
+                            <i class="fa collapse show fa-chevron-down" close="true"></i>
+                            <i class="fa collapse fa-chevron-up" close="false"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <hr>
+            <div class="d-block d-md-none">
+                <ul class="wd-navigation collapse kanbasNavMobile">
+                    <li><a href="/Kanbas/Account/Navigation/Profile/screen.html"><i
+                                class="fa fa-user-circle-o"></i> Account</a></li>
+                    <li><a href="/Kanbas/Dashboard/screen.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                    <li class="wd-active"><a href="../../Courses/Home/screen.html"><i class="fa fa-book"></i> Courses</a>
+                    </li>
+                    <li><a href="/Kanbas/Calendar/index.html"><i class="fa fa-calendar"></i> Calendar</a></li>
+                    <li><a href="/Kanbas/Inbox/index.html"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fa fa-clock-o"></i> History</a></li>
+                    <li><a href="#"><i class="fa fa-film"></i> Studio</a></li>
+                    <li><a href="#"><i class="fa fa-arrow-circle-right"></i> Commons</a></li>
+                    <li><a href="#"><i class=" fa fa-question-circle-o"></i> Help</a></li>
+                </ul>
+            </div>
             <div class="d-flex">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-1 d-md-block collapse wd-close-courNav" id="courseNav">
-                    <ul class="wd-navigation">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-1 d-md-block collapse wd-close-courNav " id="courseNav">
+                    <ul class="wd-navigation" id="wd-mobile-course-nav">
                         <li><a href="../../Courses/Home/screen.html">Home</a></li>
                         <li class="wd-active"><a href="../../Courses/Modules/screen.html">Modules</a></li>
                         <li><a href="/Kanbas/Courses/Piazza/index.html">Piazza</a></li>
@@ -74,25 +90,25 @@
                         <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
                     </ul>
                 </div>
-                <div class="flex-fill me-4 ms-4 collapse show wd-close-courNav">
+                <div class="flex-fill me-4 ms-4 collapse show wd-close-courNav kanbasNavMobile">
                     <div class="d-flex justify-content-end flex-wrap">
-                        <button type="button" class="btn btn-sm btn-primary btn-light"
+                        <button type="button" class="btn btn-sm btn-primary btn-light me-2"
                             style="white-space: nowrap;">Collapse
                             All</button>
-                        <button type="button" class="btn btn-sm btn-primary btn-light ms-1"
+                        <button type="button" class="btn btn-sm btn-primary btn-light"
                             style="white-space: nowrap;">View
                             Progress</button>
 
                         <div class="d-flex justify-content-end align-items-center">
-                            <i class="fa fa-check-circle text-success ms-4 me-1"></i>
-                            <select id="select-one-genre" class="form-select form-select-sm me-3">
+                            <i class="fa fa-check-circle text-success ms-4 me-1 mt-3 mt-sm-0"></i>
+                            <select id="select-one-genre" class="form-select form-select-sm me-3 mt-3 mt-sm-0">
                                 <option selected="PUBLISH ALL">Publish All</option>
                             </select>
                         </div>
 
-                        <button type="button" class="btn btn-sm btn-primary btn-danger " style="white-space: nowrap;">+
+                        <button type="button" class="btn btn-sm btn-primary btn-danger mt-3 mt-sm-0" style="white-space: nowrap;">+
                             Module</button>
-                        <button class="btn btn-sm btn-primary btn-light"><i class="fa fa-ellipsis-v"></i></button>
+                        <button class="btn btn-sm btn-primary btn-light mt-3 mt-sm-0"><i class="fa fa-ellipsis-v"></i></button>
                     </div>
                     <hr>
                     <ul class="list-group wd-modules">
