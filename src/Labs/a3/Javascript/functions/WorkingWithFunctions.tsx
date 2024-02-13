@@ -8,6 +8,7 @@ function WorkingWithFunction() {
         <ArrowFunctions />
         <ImpliedReturn />
         <FunctionParenthesisAndParameters />
+
     </>);
 }
 

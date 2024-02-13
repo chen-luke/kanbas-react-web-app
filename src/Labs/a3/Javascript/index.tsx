@@ -7,6 +7,9 @@ import WorkingWithFunction from "./functions/WorkingWithFunctions";
 import WorkingWithArrays from "./arrays/WorkingWithArrays";
 import TemplateLiterals from "./string/TemplateLiterals";
 import House from "./json/House";
+import FunctionDestructing from "./functions/FunctionDestructing";
+import Spreading from "./json/Spreading";
+import Destructing from "./json/Destructing";
 
 function Javascript() {
     console.log("Hello World!");
@@ -22,6 +25,10 @@ function Javascript() {
             <WorkingWithArrays />
             <TemplateLiterals />
             <House />
+            <Spreading />
+            <Destructing />
+            <FunctionDestructing />
+            
         </div>
     );
 }
