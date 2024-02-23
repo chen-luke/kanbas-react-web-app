@@ -9,9 +9,9 @@ function ModuleList() {
   const modulesList = modules.filter((module) => module.course === courseId);
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
-    <div className="row h-25 w-75 px-5">
+    <div className="row h-25 w-75 px-5 col col-lg-8">
       {/* <!-- Add buttons here --> */}
-      <div className="d-flex mb-4">
+      <div className="d-flex mb-4 flex-wrap">
         <button type="button" className="btn btn-sm btn-primary btn-light" style={{ whiteSpace: "nowrap" }}>Collapse
           All</button>
         <button type="button" className="btn btn-sm btn-primary btn-light ms-1" style={{ whiteSpace: "nowrap" }}>View
@@ -20,8 +20,9 @@ function ModuleList() {
         <div className="d-flex align-items-center">
           <i className="fa fa-check-circle text-success ms-4 me-1"></i>
           <FaCheckCircle className="ms-3 me-1 text-success w-50" />
-          <select id="select-one-genre" className="form-select form-select-sm me-3">
-            <option selected={true}> Publish All</option>
+          <select id="select-one-genre" className="form-select form-select-sm me-3" defaultValue={"Publish-All"}>
+            <option value="Publish-Some"> Publish Some</option>
+            <option value="Publish-All"> Publish All</option>
           </select>
         </div>
         <div className="d-flex flex-nowrap">
@@ -31,8 +32,8 @@ function ModuleList() {
       </div>
       <hr />
       <ul className="list-group wd-modules">
-        {modulesList.map((module) => (
-          <li
+        {modulesList.map((module, index) => (
+          <li key={index}
             className="list-group-item mt-4"
             onClick={() => setSelectedModule(module)}>
             <div>
@@ -46,8 +47,8 @@ function ModuleList() {
             </div>
             {selectedModule._id === module._id && (
               <ul className="list-group">
-                {module.lessons?.map((lesson) => (
-                  <li className="list-group-item">
+                {module.lessons?.map((lesson, index) => (
+                  <li key={index} className="list-group-item">
                     <FaEllipsisV className="me-2" />
                     {lesson.name}
                     <span className="float-end">

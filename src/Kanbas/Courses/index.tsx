@@ -5,6 +5,7 @@ import CourseNavigation from "./Navigation";
 import Modules from './Modules';
 import Home from "./Home";
 import Assignments from "./Assignments";
+import "./index.css";
 
 function Courses() {
   const { courseId } = useParams();
@@ -16,8 +17,8 @@ function Courses() {
       <CourseNavigation />
       <div>
         <div
-          className="overflow-y-scroll position-fixed bottom-0 end-0 mt-4"
-          style={{ left: "320px", top: "50px" }} >
+          className="overflow-y-scroll bottom-0 end-0 mt-4 wd-main-content"
+          style={{ top: "50px" }} > {/*removed left:320px into own media query, see CSS file*/}
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />

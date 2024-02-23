@@ -1,0 +1,15 @@
+.wd-main-content {
+    position: fixed;
+    left: 320px;
+    margin-right: 30px;
+}
+
+@media (max-width: 768px) {
+    .wd-main-content {
+        position: none;
+        left: 0px;
+        margin-right: 10px;
+    }
+
+}
+

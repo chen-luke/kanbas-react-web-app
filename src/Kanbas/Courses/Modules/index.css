@@ -36,18 +36,4 @@
   margin-right: 3px;
 }
 
-#courseDropBtn[class="btn btn-sm btn-light me-4 py-2 collapsed"] .fa-chevron-down {
-  display: none;
-}
 
-#courseDropBtn[class="btn btn-sm btn-light me-4 py-2 collapsed"] .fa-chevron-up {
-  display: block;
-}
-
-#courseDropBtn[class="btn btn-sm btn-light me-4 py-2"] .fa-chevron-up {
-  display: none;
-}
-
-#courseDropBtn[class="btn btn-sm btn-light me-4 py-2"] .fa-chevron-down {
-  display: block;
-}

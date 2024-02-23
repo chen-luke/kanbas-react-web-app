@@ -3,9 +3,9 @@ import ModuleList from "../Modules/List";
 function Home() {
     const style = "btn btn-sm btn-light mt-2 text-start border border-secondary"
     return (
-        <div className="pe-5 d-flex mt-4">
+        <div className="d-flex mt-4">
             <ModuleList />
-            <div className="col">
+            <div className="col d-none d-lg-block">
                 <div className="col d-flex flex-column px-5">
                     <button type="button" className={style}>Export Existing Content</button>
                     <button type="button" className={style}>Import from Commons</button>

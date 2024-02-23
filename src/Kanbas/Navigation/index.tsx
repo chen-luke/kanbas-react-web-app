@@ -15,8 +15,12 @@ function KanbasNavigation() {
     { label: "Help",  icon: <FaHandsHelping className="fs-2" color="red"/> },
   ];
   const { pathname } = useLocation();
+
+  const isLinks = (path:string) => links.some(link => path.includes("Courses"))
+  const result = (pathname:string) => isLinks(pathname) ? "d-none" : ""; 
+  const block = result(pathname);
   return (
-    <ul className="wd-kanbas-navigation">
+    <ul className={"wd-kanbas-navigation "+ block + " d-md-block"}>
         <li>
             <Link to={`https://www.northeastern.edu`}>
                 <img src={logo} style={{width:"100%", height:"100%"}}  alt="northeastern university logo"/>
