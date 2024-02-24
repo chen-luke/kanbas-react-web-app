@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import "./index.css";
 import { FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt, FaClock, FaUserFriends, FaInbox, FaUsers, FaHandsHelping, FaRegArrowAltCircleRight} from "react-icons/fa";
-import logo from '../imgs/logo.png';
-function KanbasNavigation() {
+
+function KanbasMobileNav() {
   const links = [
     { label: "Account",   icon: <FaRegUserCircle className="fs-2"/>  },
     { label: "Dashboard", icon: <FaTachometerAlt className="fs-2" color="red"/>  },
@@ -16,18 +16,8 @@ function KanbasNavigation() {
   ];
   const { pathname } = useLocation();
 
-  const isLinks = (path:string) => links.some(() => path.includes("Courses"))
-  const result = (pathname:string) => isLinks(pathname) ? "d-none" : ""; 
-  // setting the kanbas nav bar in the courses page to display none on mobile.
-  const isFromCourses = result(pathname);
-
   return (
-    <ul className={`wd-kanbas-navigation ${isFromCourses} d-md-block`}>
-        <li>
-            <Link to={`https://www.northeastern.edu`}>
-                <img src={logo} style={{width:"100%", height:"100%"}}  alt="northeastern university logo"/>
-            </Link>
-        </li>
+    <ul className={`wd-navigation`}>
       {links.map((link, index) => (
         <li key={index} className={pathname.includes(link.label) ? "wd-active" : ""}>
           <Link to={`/Kanbas/${link.label}`}> {link.icon} {link.label} </Link>
@@ -36,4 +26,4 @@ function KanbasNavigation() {
     </ul>
   );
 }
-export default KanbasNavigation;
+export default KanbasMobileNav;
