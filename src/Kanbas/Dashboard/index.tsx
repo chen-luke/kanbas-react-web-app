@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { courses } from "../Database";
-function Dashboard() {
+function Dashboard({defaultHeader = true}) {
   return (
     <div className="p-4">
-      <h1>Dashboard</h1>              <hr />
+      <h1>{`${defaultHeader ? "Dashboard":"Pick A Course"}`}</h1>              <hr />
       <h2>Published Courses (12)</h2> <hr />
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">

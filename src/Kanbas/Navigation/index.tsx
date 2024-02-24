@@ -16,7 +16,7 @@ function KanbasNavigation() {
   ];
   const { pathname } = useLocation();
 
-  const isLinks = (path:string) => links.some(() => path.includes("Courses"))
+  const isLinks = (path:string) => links.some(() => path.includes("Courses/"))
   const result = (pathname:string) => isLinks(pathname) ? "d-none" : ""; 
   // setting the kanbas nav bar in the courses page to display none on mobile.
   const isFromCourses = result(pathname);
