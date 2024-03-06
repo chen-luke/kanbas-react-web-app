@@ -1,10 +1,21 @@
 import React from "react";
+import PassingFunctions from "./PassingFunctions";
+import PassingDataOnEvent from "./PassingDataOnEvent";
+import ClickEvent from "./ClickEvent";
 
-function Assignment3() {
+const Assignment4 = () => {
+    const sayHello = () => {
+        alert("Hello");
+    }
     return (
-        <div className="container">
-        </div>
+        <>
+        <h1>Assignment 4</h1>
+        <ClickEvent />
+        <PassingDataOnEvent />
+        <PassingFunctions theFunction={sayHello} />
+      </>
+  
     )
 }
 
-export default Assignment3;
+export default Assignment4;
