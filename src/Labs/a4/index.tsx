@@ -2,6 +2,15 @@ import React from "react";
 import PassingFunctions from "./PassingFunctions";
 import PassingDataOnEvent from "./PassingDataOnEvent";
 import ClickEvent from "./ClickEvent";
+import EventObject from "./EventObject";
+import Counter from "./Counter";
+import BooleanStateVariables from "./BooleanStateVariable";
+import StringStateVariables from "./StringStateVariables";
+import DateStateVariable from "./DateStateVariable";
+import ObjectStateVariable from "./ObjectStateVariable";
+import ArrayStateVariable from "./ArrayStateVariables";
+import ParentStateComponent from "./ParentStateVariable";
+import ReduxExamples from "./ReduxExamples";
 
 const Assignment4 = () => {
     const sayHello = () => {
@@ -10,9 +19,18 @@ const Assignment4 = () => {
     return (
         <>
         <h1>Assignment 4</h1>
+        <ReduxExamples />
         <ClickEvent />
         <PassingDataOnEvent />
         <PassingFunctions theFunction={sayHello} />
+        <EventObject />
+        <Counter/>
+        <BooleanStateVariables />
+        <StringStateVariables />
+        <DateStateVariable />
+        <ObjectStateVariable />
+        <ArrayStateVariable />
+        <ParentStateComponent />
       </>
   
     )
