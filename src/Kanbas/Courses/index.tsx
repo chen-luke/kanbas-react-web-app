@@ -1,4 +1,4 @@
-import { courses } from "../../Kanbas/Database";
+import db from "../../Kanbas/Database";
 import { useParams, Routes, Route, Navigate, useLocation} from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { CgCloseR } from "react-icons/cg";
@@ -14,7 +14,7 @@ import KanbasMobileNav from "./KanbasMobileNav";
 import path from "path";
 
 
-function Courses() {
+function Courses({courses} : {courses: any[]}) {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   const [kanbasMenuVisible, setKanbasMenuVisible] = useState(false);
