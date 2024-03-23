@@ -94,7 +94,7 @@ function ModuleList() {
               {module.name}
               <span className="float-end">
                 <FaCheckCircle className="text-success" />
-                <button className="btn mb-1" onClick={() => { dispatch(setModule(module))}}>
+                <button className="btn mb-1" onClick={() => dispatch(setModule(module))}>
                   <FaEdit className="ms-2" />
                 </button>
                 <button className="btn"
