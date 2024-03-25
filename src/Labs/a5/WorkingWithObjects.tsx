@@ -64,43 +64,21 @@ function WorkingWithObjects() {
                 ...assignment, score: parseInt(e.target.value)
             })} value={assignment.score} />
             <a className="btn btn-primary mt-2" href={`${ASSIGNMENT_URL}/score/${assignment.score}`}>
-                Update Assingment Score
+                Update Assignment Score
             </a>
             <br />
             <br />
             <label htmlFor="">
-                Module Completed?
-                <input className="ms-2" type="checkbox" onChange={(e) => setAssignment({
+                Module Completion
+                <input className="ms-2 me-2" type="checkbox" onChange={(e) => setAssignment({
                     ...assignment, completed: e.target.checked
                 })} value={assignment.completed.toString()} />
                 {assignment.completed.toString()}
             </label>
             <br />
             <a className="btn btn-primary mt-2" href={`${ASSIGNMENT_URL}/completed/${assignment.completed}`}>
-                Update Assingment Completion
+                Update Assignment Completion
             </a>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             <br />
         </div>
