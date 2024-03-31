@@ -54,6 +54,7 @@ function WorkingWithArrays() {
 
             <br />
             <br />
+            <h3>Working With Arrays</h3>
             <input type="number" value={todo.id}
                 onChange={(e) => setTodo({
                     ...todo, id: parseInt(e.target.value)
@@ -63,12 +64,44 @@ function WorkingWithArrays() {
                 onChange={(e) => setTodo({
                     ...todo, title: e.target.value
                 })} />
-            <h3>Updating an Item in an Array</h3>
+            <br />
+            <h3>Updating an Item's Title in an Array</h3>
             <a className="btn btn-primary" href={`${API}/${todo.id}/title/${todo.title}`} >
                 Update Title to {todo.title}
             </a>
             <br />
             <br />
+            <h3>Change the Completed Property of a TODO</h3>
+            <input type="number" value={todo.id}
+                onChange={(e) => setTodo({
+                    ...todo, id: parseInt(e.target.value)
+                })} />
+            <br />
+            Complete Todo <input type="checkbox" name="" id="" onChange={(e) => setTodo({
+                ...todo, completed: e.target.checked
+            })
+            }/>
+            <br />
+            <br />
+            <a className="btn btn-primary" href={`${API}/${todo.id}/completed/${todo.completed}`} >
+                Update {todo.title} Completion
+            </a>
+            <br />
+            <br />
+            <h3>Change the Description Property of a TODO</h3>
+            <input type="number" value={todo.id}
+                onChange={(e) => setTodo({
+                    ...todo, id: parseInt(e.target.value)
+                })} />
+            <br />
+            <textarea value={todo.description} onChange={(e) => setTodo({
+                ...todo, description: e.target.value
+            })}/>
+            <br />
+            <br />
+            <a className="btn btn-primary" href={`${API}/${todo.id}/description/${todo.description}`} >
+                Update {todo.title} Description
+            </a>
             <br />
             <br />
             <br />
