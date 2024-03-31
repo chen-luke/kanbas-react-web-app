@@ -1,4 +1,5 @@
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function WorkingWithArrays() {
     const API = "http://localhost:4000/a5/todos";
@@ -10,10 +11,44 @@ function WorkingWithArrays() {
         completed: false,
     });
 
+    type Todos = { id: number, title: string, description: string, due: string, completed: boolean }[]
+    type Todo = { id: number, title: string, description: string, due: string, completed: boolean }
+
+    const [todos, setTodos] = useState<Todos>([]);
+    const fetchTodos = async () => {
+        const response = await axios.get(API);
+        setTodos(response.data);
+    };
+    useEffect(() => {
+        fetchTodos();
+    }, []);
+
+    const removeTodo = async (todo: Todo) => {
+        const response = await axios
+            .get(`${API}/${todo.id}/delete`);
+        setTodos(response.data);
+    };
+
+    const createTodo = async () => {
+        const response = await axios.get(`${API}/create`);
+        setTodos(response.data);
+    };
+
+    const fetchTodoById = async (id: number) => {
+        const response = await axios.get(`${API}/${id}`);
+        setTodo(response.data);
+    }
+
+    const updateTitle = async () => {
+        const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
+        setTodos(response.data);
+    };
+
 
     return (
         <div>
             <h3>Working with Arrays</h3>
+
             <h4>Retrieving Arrays</h4>
             <a className="btn btn-primary" href={API}>
                 Get Todos
@@ -80,7 +115,7 @@ function WorkingWithArrays() {
             Complete Todo <input type="checkbox" name="" id="" onChange={(e) => setTodo({
                 ...todo, completed: e.target.checked
             })
-            }/>
+            } />
             <br />
             <br />
             <a className="btn btn-primary" href={`${API}/${todo.id}/completed/${todo.completed}`} >
@@ -96,7 +131,7 @@ function WorkingWithArrays() {
             <br />
             <textarea value={todo.description} onChange={(e) => setTodo({
                 ...todo, description: e.target.value
-            })}/>
+            })} />
             <br />
             <br />
             <a className="btn btn-primary" href={`${API}/${todo.id}/description/${todo.description}`} >
@@ -104,6 +139,27 @@ function WorkingWithArrays() {
             </a>
             <br />
             <br />
+
+            <ul className="list-group w-50">
+                <button className="btn btn-primary mb-2" onClick={createTodo} >
+                    Create Todo
+                </button>
+                <button className="btn btn-success mb-2" onClick={updateTitle} >
+                    Update Title
+                </button>
+                {todos.map((todo) => (
+                    <li className="list-group-item" key={todo.id}>
+                        {todo.title}
+                        <button className="btn btn-danger ms-4 " onClick={() => removeTodo(todo)} >
+                            Remove
+                        </button>
+                        <button className="btn btn-warning ms-2 " onClick={() => fetchTodoById(todo.id)} >
+                            Edit
+                        </button>
+
+                    </li>
+                ))}
+            </ul>
             <br />
             <br />
             <br />
