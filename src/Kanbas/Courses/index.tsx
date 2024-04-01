@@ -8,15 +8,18 @@ import Modules from './Modules';
 import Home from "./Home";
 import Assignments from "./Assignments";
 import "./index.css";
-import {useState } from "react";
+import {useState, useEffect} from "react";
 import KanbasNavigation from "../Navigation";
 import KanbasMobileNav from "./KanbasMobileNav";
 import path from "path";
+import axios from "axios";
 
 
-function Courses({courses} : {courses: any[]}) {
+function Courses() {
+  const COURSES_API = "http://localhost:4000/api/courses";
+
   const { courseId } = useParams();
-  const course = courses.find((course) => course._id === courseId);
+  // const course = courses.find((course) => course._id === courseId);
   const [kanbasMenuVisible, setKanbasMenuVisible] = useState(false);
   const [courseMenuVisible, setCourseMenuVisible] = useState(false);
   const [contentVisible, setContentVisible] = useState(true);
@@ -40,6 +43,20 @@ function Courses({courses} : {courses: any[]}) {
   // Grab the end string of the url. Ex get 'Home' from 'Kanbas/Courses/RE3500/Home'
   const parts = pathname.split('/')
   const lastpart = parts.pop()
+
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+
+  
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
+
   return (
     <div>
       <div className={"d-flex justify-content-between align-items-center ms-4 mt-2 " + getDisplayClass(contentVisible)}>

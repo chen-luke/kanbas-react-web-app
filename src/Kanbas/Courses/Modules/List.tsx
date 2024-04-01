@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import db from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaWindowClose, FaEdit } from "react-icons/fa";
@@ -10,13 +10,20 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./reducer";
 import { KanbasState } from "../../store";
+import * as client from "./client";
 
 
 
 function ModuleList() {
-  const { courseId } = useParams();
+
+  type CourseId = {
+    courseId: string;
+  }
+
+  const { courseId } = useParams<{ courseId: string }>();
   const moduleList = useSelector((state: KanbasState) =>
     state.modulesReducer.modules);
   const module = useSelector((state: KanbasState) =>
@@ -61,6 +68,37 @@ function ModuleList() {
 
   //const modulesList = db.modules.filter((module) => module.course === courseId);
   const [selectedModule, setSelectedModule] = useState(moduleList[0]);
+
+  const handleAddModule = () => {
+    if (courseId) {
+      client.createModule(courseId, module).then((module) => {
+        dispatch(addModule(module));
+      });
+    }
+  };
+
+  const handleDeleteModule = (moduleId: string) => {
+    console.log(moduleId);
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
+  useEffect(() => {
+    if (courseId) {
+      client.findModulesForCourse(courseId)
+        .then((modules) =>
+          dispatch(setModules(modules))
+        );
+    }
+  }, [courseId]);
+
+
   return (
     <div className="row h-25 w-75 px-5 col col-lg-8">
       {/* <!-- Add buttons here --> */}
@@ -68,13 +106,13 @@ function ModuleList() {
       <hr />
       <ul className=" list-group">
         <li className="list-group-item">
-        <h5>Edit Module</h5>
+          <h5>Edit Module</h5>
           <div className="d-flex justify-center mt-3">
             <input value={module.name}
               onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
             />
-            <button className="btn btn-primary btn-sm ms-2" onClick={ ()=> dispatch(updateModule(module))}>Update</button>
-            <button className="btn btn-success btn-sm ms-2" onClick={() => dispatch(addModule({...module, course: courseId}))}>Add</button>
+            <button className="btn btn-primary btn-sm ms-2" onClick={handleUpdateModule}>Update</button>
+            <button className="btn btn-success btn-sm ms-2" onClick={handleAddModule}>Add</button>
           </div>
           <div className="w-100 mt-4">
             <textarea className="w-100" value={module.description}
@@ -98,7 +136,7 @@ function ModuleList() {
                   <FaEdit className="ms-2" />
                 </button>
                 <button className="btn"
-                  onClick={() => dispatch(deleteModule(module._id))}
+                  onClick={() => handleDeleteModule(module._id)}
                 >
                   <FaWindowClose className="text-danger mb-1" /></button>
                 <FaEllipsisV className="ms-2" />
