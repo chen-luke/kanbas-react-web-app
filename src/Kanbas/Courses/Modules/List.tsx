@@ -78,7 +78,6 @@ function ModuleList() {
   };
 
   const handleDeleteModule = (moduleId: string) => {
-    console.log(moduleId);
     client.deleteModule(moduleId).then((status) => {
       dispatch(deleteModule(moduleId));
     });
@@ -127,7 +126,7 @@ function ModuleList() {
         {moduleList.filter((module) => module.course === courseId).map((module, index) => (
           <li key={index}
             className="list-group-item mt-4" style={{ borderTopWidth: "1px" }}
-            onClick={() => {setSelectedModule(module); console.log(module)}}>
+            onClick={() => {setSelectedModule(module);}}>
             <div>
               <FaEllipsisV className="me-2" />
               {module.name}
