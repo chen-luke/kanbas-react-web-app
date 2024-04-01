@@ -19,9 +19,6 @@ function WorkingWithArrays() {
         const response = await axios.get(API);
         setTodos(response.data);
     };
-    useEffect(() => {
-        fetchTodos();
-    }, []);
 
     const removeTodo = async (todo: Todo) => {
         const response = await axios
@@ -44,7 +41,25 @@ function WorkingWithArrays() {
         setTodos(response.data);
     };
 
+    const postTodo = async () => {
+        const response = await axios.post(API, todo)
+        setTodos([...todos, response.data]);
+    }
 
+    const deleteTodo = async (todo: Todo) => {
+        const response = await axios.delete(`${API}/${todo.id}`);
+        setTodos(todos.filter((t) => t.id !== todo.id));
+    };
+
+    const updateTodo = async () => {
+        const response = await axios.put(`${API}/${todo.id}`, todo);
+        setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
+    };
+
+
+    useEffect(() => {
+        fetchTodos();
+    }, []);
     return (
         <div>
             <h3>Working with Arrays</h3>
@@ -139,8 +154,33 @@ function WorkingWithArrays() {
             </a>
             <br />
             <br />
+            <input className="form-control w-50 mb-2" type="text" value={todo.title}
+                onChange={(e) => setTodo({
+                    ...todo, title: e.target.value
+                })} />
+            <textarea className="form-control w-50 mb-2" value={todo.description}
+                onChange={(e) => setTodo({
+                    ...todo,
+                    description: e.target.value
+                })} />
+            <input className="mb-2 w-50" value={todo.due} type="date"
+                onChange={(e) => setTodo({
+                    ...todo, due: e.target.value
+                })} />
+            <br />
+            <label>
+                <input className="me-2 mb-2" value={todo.completed.toString()} type="checkbox"
+                    onChange={(e) => setTodo({
+                        ...todo, completed: e.target.checked
+                    })} />
+                Completed
+            </label>
 
             <ul className="list-group w-50">
+                <button className="btn btn-warning mb-2" onClick={postTodo}> Post Todo </button>
+                <button className="btn btn-success mb-2" onClick={updateTodo}>
+                    Update Todo
+                </button>
                 <button className="btn btn-primary mb-2" onClick={createTodo} >
                     Create Todo
                 </button>
@@ -150,12 +190,17 @@ function WorkingWithArrays() {
                 {todos.map((todo) => (
                     <li className="list-group-item" key={todo.id}>
                         {todo.title}
-                        <button className="btn btn-danger ms-4 " onClick={() => removeTodo(todo)} >
-                            Remove
+                        <button onClick={() => deleteTodo(todo)}
+                            className="btn btn-danger ms-4">
+                            Delete
                         </button>
                         <button className="btn btn-warning ms-2 " onClick={() => fetchTodoById(todo.id)} >
                             Edit
                         </button>
+                        <button className="btn btn-danger ms-2 " onClick={() => removeTodo(todo)} >
+                            Remove
+                        </button>
+
 
                     </li>
                 ))}
