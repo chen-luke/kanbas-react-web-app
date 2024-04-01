@@ -2,8 +2,12 @@ import axios from "axios";
 import Module from "module";
 
 
-const COURSES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/courses";
-const MODULES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/modules";
+// const COURSES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/courses";
+// const MODULES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/modules";
+
+const API_BASE = process.env.REACT_APP_API_BASE;
+const COURSES_API = `${API_BASE}/api/courses`;
+const MODULES_API = `${API_BASE}/api/modules`;
 
 // For local server developement
 // const COURSES_API = "http://localhost:4000/api/courses";
