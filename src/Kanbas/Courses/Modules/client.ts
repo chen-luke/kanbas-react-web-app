@@ -1,8 +1,13 @@
 import axios from "axios";
 import Module from "module";
-const COURSES_API = "http://localhost:4000/api/courses";
 
-const MODULES_API = "http://localhost:4000/api/modules";
+
+const COURSES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/courses";
+const MODULES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/modules";
+
+// For local server developement
+// const COURSES_API = "http://localhost:4000/api/courses";
+// const MODULES_API = "http://localhost:4000/api/modules";
 export const deleteModule = async (moduleId:string) => {
   const response = await axios
     .delete(`${MODULES_API}/${moduleId}`);

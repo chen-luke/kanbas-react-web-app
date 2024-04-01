@@ -13,7 +13,7 @@ interface ModulesState {
 }
 
 const initialState: ModulesState = {
-  modules: [],
+  modules: [{ _id: "", name: "New Module", description: "New Description" }],
   module: { _id: "", name: "New Module 123", description: "New Description" },
 };
 
