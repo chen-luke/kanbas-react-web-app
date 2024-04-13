@@ -67,13 +67,13 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
               <div className="card">
                 <img src={`/images/${course.image}`} className="card-img-top" alt="" style={{ height: 150 }} />
                 <div className="card-body">
-                  <Link className="card-little" to={`/Kanbas/Courses/${course._id}/Home`}
+                  <Link className="card-little" to={`/Kanbas/Courses/${course.id}/Home`}
                     style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                     {course.name}
 
                   </Link>
                   <p className="card-next">{course.name}</p>
-                  <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-primary">GO </Link>
+                  <Link to={`/Kanbas/Courses/${course.id ?? course._id}/Home`} className="btn btn-primary">GO </Link>
                   <button className="btn btn-light ms-2" onClick={(event) => {
                     event.preventDefault();
                     setCourse(course);

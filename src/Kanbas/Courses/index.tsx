@@ -49,6 +49,7 @@ function Courses() {
     const response = await axios.get(
       `${COURSES_API}/${courseId}`
     );
+    console.log(response.data)
     setCourse(response.data);
   };
 
