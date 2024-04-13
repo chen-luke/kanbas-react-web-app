@@ -1,5 +1,6 @@
 import { Link, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import Account from "./Account";
 import KanbasNavigation from "./Navigation";
 import Courses from "./Courses";
 import db from "./Database";
@@ -87,8 +88,8 @@ function Kanbas() {
         <KanbasNavigation />
         <div style={{ flexGrow: 1 }}>
           <Routes>
+            <Route path="/Account/*" element={<Account />}></Route>
             <Route path="/" element={<Navigate to="Dashboard" />}></Route>
-            <Route path="Account" element={<h1>Account</h1>}></Route>
             <Route path="Dashboard" element={<Dashboard
               defaultHeader={false}
               courses={courses}
