@@ -61,7 +61,7 @@ function Courses() {
     <div>
       <div className={"d-flex justify-content-between align-items-center ms-4 mt-2 " + getDisplayClass(contentVisible)}>
         <button className="btn btn-light" onClick={() => { toggleKanbas(!kanbasMenuVisible) }}><HiMiniBars3 className="d-block" /></button>
-        <h4 className="ms-4 mt-2 me-2 me-auto">Course {" > "} {course?.name} {" > "} {lastpart} <br /><span style={{ fontSize: "15px" }}>{course?.number}</span></h4>
+        <h4 className="ms-4 mt-2 me-2 me-auto">Course {" > "} {course.name} {" > "} {lastpart} <br /><span style={{ fontSize: "15px" }}>{course.number}</span></h4>
         <button className="btn me-4" onClick={() => {toggleCourse(!courseMenuVisible)}}><FaChevronDown className="d-sm-block d-md-none" /></button>
       </div>
       <hr className={getDisplayClass(contentVisible)} />
