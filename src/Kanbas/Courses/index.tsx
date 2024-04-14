@@ -16,8 +16,8 @@ import axios from "axios";
 
 
 function Courses() {
-  const COURSES_API = "http://localhost:4000/api/courses";
 
+  const COURSES_API = `${process.env.REACT_APP_BASE_API_URL}/api/courses`
   const { courseId } = useParams();
   // const course = courses.find((course) => course._id === courseId);
   const [kanbasMenuVisible, setKanbasMenuVisible] = useState(false);
