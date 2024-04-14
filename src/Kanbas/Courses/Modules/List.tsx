@@ -126,7 +126,7 @@ function ModuleList() {
         {moduleList.filter((module) => module.course === courseId).map((module, index) => (
           <li key={index}
             className="list-group-item mt-4" style={{ borderTopWidth: "1px" }}
-            onClick={() => {setSelectedModule(module);}}>
+            onClick={() => setSelectedModule(module)}>
             <div>
               <FaEllipsisV className="me-2" />
               {module.name}

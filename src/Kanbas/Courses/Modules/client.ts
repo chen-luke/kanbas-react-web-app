@@ -12,9 +12,9 @@ export const deleteModule = async (moduleId:string) => {
   return response.data;
 };
 
-export const updateModule = async (module:Module) => {
+export const updateModule = async (module:any) => {
     const response = await axios.
-      put(`${MODULES_API}/${module.id}`, module);
+      put(`${MODULES_API}/${module._id}`, module);
     return response.data;
   };
   
