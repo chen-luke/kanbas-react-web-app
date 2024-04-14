@@ -86,6 +86,7 @@ export default function UserTable() {
                             <td>{user.username}</td>
                             <td>{user.firstName}</td>
                             <td>{user.lastName}</td>
+                            <td>{user.role}</td>
                             <td>
                                 <button className="btn btn-danger" onClick={() => deleteUser(user)}>
                                     <BsTrash3Fill />
