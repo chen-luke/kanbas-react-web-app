@@ -84,7 +84,7 @@ function Kanbas() {
 
   return (
     <Provider store={store}>
-      <div className="d-flex">
+      <div className="d-flex" style={{minHeight:"100vh"}}>
         <KanbasNavigation />
         <div style={{ flexGrow: 1 }}>
           <Routes>
