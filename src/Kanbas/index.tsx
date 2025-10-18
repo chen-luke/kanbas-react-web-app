@@ -1,9 +1,8 @@
-import { Link, Routes, Route, Navigate } from "react-router-dom";
+import {Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Account from "./Account";
 import KanbasNavigation from "./Navigation";
 import Courses from "./Courses";
-import db from "./Database";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import store from "./store";
