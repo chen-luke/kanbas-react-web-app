@@ -79,7 +79,7 @@ function Kanbas() {
 
   useEffect(() => {
     findAllCourses();
-  }, []);
+  });
 
 
   return (
