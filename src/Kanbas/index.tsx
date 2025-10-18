@@ -11,33 +11,12 @@ import { Provider } from "react-redux";
 const API_BASE = process.env.REACT_APP_API_BASE;
 function Kanbas() {
 
-  //const [courses, setCourses] = useState<any[]>(db.courses);
   const [courses, setCourses] = useState<any[]>([]);
   const [course, setCourse] = useState({
     _id: "0", name: "New Course", number: "New Number",
     startDate: "2-23-09-10", endDate: "2023-12-15",
     image: "/images/reactjs.jpg"
   })
-
-  // const addNewCourse = () => {
-  //   const newCourse = { ...course, _id: new Date().getTime().toString() };
-  //   setCourses([...courses, { ...course, ...newCourse }]);
-  // }
-
-  // const deleteCourse = (courseId: string) => {
-  //   setCourses(courses.filter((course) => course._id !== courseId))
-  // };
-
-  // const updateCourse = () => {
-  //   setCourses(
-  //     courses.map((c) => {
-  //       return c._id === course._id ? course : c;
-  //     })
-  //   );
-  // };
-
-  //const COURSES_API = "https://kanbas-node-server-app-cs4550-02.onrender.com/api/courses";
-  //const COURSES_API = "http://localhost:4000/api/courses";
   
   const COURSES_API = `${API_BASE}/api/courses`;
 
