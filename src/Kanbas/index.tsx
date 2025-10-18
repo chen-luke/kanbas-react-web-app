@@ -1,4 +1,4 @@
-import {Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Account from "./Account";
 import KanbasNavigation from "./Navigation";
@@ -25,13 +25,13 @@ function getDate() {
 
 function Kanbas() {
 
-  const [courses, setCourses] = useState<any[]>([]);
+  const [courses, setCourses] = useState<any[]>([])
   const [course, setCourse] = useState({
-    _id: "0", name: "New Course", number: "New Number",
-    startDate: "2-23-09-10", endDate: "2023-12-15",
+    _id: "0", name: "New Course", number: "",
+    startDate: getDate(), endDate: "",
     image: "/images/reactjs.jpg"
   })
-  
+
   const COURSES_API = `${API_BASE}/api/courses`;
 
   const findAllCourses = async () => {
@@ -39,7 +39,8 @@ function Kanbas() {
     setCourses(response.data);
   };
 
-  const addNewCourse = async () => {
+  const addNewCourse = async (e: React.FormEvent) => {
+    e.preventDefault();
     const response = await axios.post(COURSES_API, course);
     setCourses([...courses, response.data]);
   };
@@ -68,15 +69,13 @@ function Kanbas() {
     );
   };
 
-
   useEffect(() => {
     findAllCourses();
   });
 
-
   return (
     <Provider store={store}>
-      <div className="d-flex" style={{minHeight:"100vh"}}>
+      <div className="d-flex" style={{ minHeight: "100vh" }}>
         <KanbasNavigation />
         <div style={{ flexGrow: 1 }}>
           <Routes>
@@ -90,7 +89,7 @@ function Kanbas() {
               addNewCourse={addNewCourse}
               deleteCourse={deleteCourse}
               updateCourse={updateCourse} />}></Route>
-            <Route path="Courses/:courseId/*" element={<Courses/>}></Route>
+            <Route path="Courses/:courseId/*" element={<Courses />}></Route>
             <Route path="Courses/" element={<Dashboard
               defaultHeader={false}
               courses={courses}
