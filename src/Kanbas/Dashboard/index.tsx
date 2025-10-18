@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
+import CourseImage from "./course-image";
 
 function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCourse,
   deleteCourse, updateCourse }: {
     defaultHeader: boolean;
     courses: any[];
-    course: any;
+    course: {
+      _id: string;
+      name: string;
+      number: string;
+      startDate: string;
+      endDate: string;
+      image: string;
+    };
     setCourse: (course: any) => void;
     addNewCourse: (e: React.FormEvent) => Promise<void>;
     deleteCourse: (course: any) => void;
