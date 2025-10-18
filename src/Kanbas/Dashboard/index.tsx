@@ -43,7 +43,7 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
                   </Link>
                   <p className="card-next">{course.name}</p>
                   <Link to={`/Kanbas/Courses/${course.id ?? course._id}/Home`} className="btn btn-primary">GO </Link>
-                  <button className="btn btn-light ms-2" onClick={(event) => {
+                  <button className="btn btn-light ms-2 border border-1" onClick={(event) => {
                     event.preventDefault();
                     setCourse(course);
                   }}>Edit</button>
