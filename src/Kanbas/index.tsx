@@ -53,7 +53,7 @@ function Kanbas() {
   };
 
   const deleteCourse = async (courseId: string) => {
-    const response = await axios.delete(
+    await axios.delete(
       `${COURSES_API}/${courseId}`
     );
     setCourses(courses.filter(
@@ -62,7 +62,7 @@ function Kanbas() {
 
 
   const updateCourse = async () => {
-    const response = await axios.put(
+    await axios.put(
       `${COURSES_API}/${course._id}`,
       course
     );
