@@ -9,6 +9,20 @@ import store from "./store";
 import { Provider } from "react-redux";
 
 const API_BASE = process.env.REACT_APP_API_BASE;
+
+function getDate() {
+  const today = new Date();
+  const year = today.getFullYear();
+  // .getMonth() is 0-indexed, so add 1, then pad
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  // Pad the date/day
+  const day = String(today.getDate()).padStart(2, '0');
+
+  const defaultStartDate = `${year}-${month}-${day}`;
+  // This will result in a string like "2025-10-18"
+  return defaultStartDate
+}
+
 function Kanbas() {
 
   const [courses, setCourses] = useState<any[]>([]);
