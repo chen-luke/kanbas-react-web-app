@@ -35,7 +35,7 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
           {courses.map((course: any) => (
             <div key={course._id} className="col" style={{ width: 300 }}>
               <div className="card">
-                <img src={`/images/${course.image}`} className="card-img-top" alt="" style={{ height: 150 }} />
+                <CourseImage courseId={course.number} />
                 <div className="card-body">
                   <Link className="card-little" to={`/Kanbas/Courses/${course.id}/Home`}
                     style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
