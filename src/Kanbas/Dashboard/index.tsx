@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CourseImage from "./course-image";
+import { CSSProperties, useEffect, useState, useRef } from "react";
 
 function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCourse,
   deleteCourse, updateCourse }: {
@@ -19,13 +20,38 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
     updateCourse: () => void;
   }) {
 
+  const formRef = useRef<HTMLHeadingElement | null>(null);
+  const [isFormActive, setIsFormActive] = useState(false);
+
+  const editFormActiveStyle: CSSProperties = {
+    borderRadius: '5px',
+    boxShadow: "0 0 0 3px rgba(73, 145, 252, 0.8), 0 0 10px rgba(22, 82, 170, 0.8), 0 0 5px rgba(255, 255, 255, 1)",
+  };
+
+  useEffect(() => {
+    if (isFormActive) {
+      const timerId = setTimeout(() => {
+        setIsFormActive(false);
+      }, 1000);
+      return () => clearTimeout(timerId);
+    }
+  }, [isFormActive]);
+
+  function triggerFormFocusAnimation() {
+    setIsFormActive(true)
+  }
+
+  function scrollToForm(formRef: React.RefObject<HTMLHeadingElement>) {
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <div className="p-4">
       <h1>{`${defaultHeader ? "Dashboard" : "Pick A Course"}`}</h1><hr />
-      <h5>Course</h5>
+      <h5 ref={formRef}>Course</h5>
       <form onSubmit={addNewCourse}>
-        <div className="row g-2 col-md-9 col-lg-5 col-xl-4 col-xxl-3">
-          <input value={course.name} className="form-control" required placeholder="Course Name"
+        <div className="row g-2 col-md-9 col-lg-5 col-xl-4 col-xxl-3 p-2 my-3" style={isFormActive ? editFormActiveStyle : undefined}>
+          <input value={course.name} className="form-control mt-0" required placeholder="Course Name"
             onChange={(e) => setCourse({ ...course, name: e.target.value })} />
           <input value={course.number} className="form-control" type="number" max="9999" required placeholder="Course Number"
             onChange={(e) => setCourse({ ...course, number: e.target.value })} />
@@ -54,6 +80,8 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
                   <button className="btn btn-light ms-2 border border-1" onClick={(event) => {
                     event.preventDefault();
                     setCourse(course);
+                    triggerFormFocusAnimation()
+                    scrollToForm(formRef);
                   }}>Edit</button>
                   <button className="btn btn-danger ms-2" onClick={(event) => {
                     event.preventDefault();

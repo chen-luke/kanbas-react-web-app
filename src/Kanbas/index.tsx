@@ -82,7 +82,7 @@ function Kanbas() {
             <Route path="/Account/*" element={<Account />}></Route>
             <Route path="/" element={<Navigate to="Dashboard" />}></Route>
             <Route path="Dashboard" element={<Dashboard
-              defaultHeader={false}
+              defaultHeader={true}
               courses={courses}
               course={course}
               setCourse={setCourse}
