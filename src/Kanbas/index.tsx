@@ -37,6 +37,7 @@ function Kanbas() {
 
   const findAllCourses = async () => {
     setLoading(true);
+    await new Promise(res => setTimeout(res, 3000))
     const response = await axios.get(COURSES_API);
     setCourses(response.data);
     setLoading(false);
