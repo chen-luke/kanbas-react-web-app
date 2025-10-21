@@ -48,7 +48,7 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
   }
 
   return (
-    <div className="">
+    <div className="p-4">
       <h1>{`${defaultHeader ? "Dashboard" : "Pick A Course"}`}</h1><hr />
       <h5 ref={formRef}>Course</h5>
       <form onSubmit={addNewCourse}>
