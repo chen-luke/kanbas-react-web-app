@@ -68,7 +68,7 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
       <h2 className="mt-5">Published Courses ({courses.length})</h2> <hr />
       <div className="row">
         {loading ?
-          <SkeletonRow /> :
+          false :
           <div className="row row-cols-1 row-cols-md-5 g-4 mt-0">
             {courses.map((course: any) => (
               <div key={course._id} className="col" style={{ width: 300 }}>
