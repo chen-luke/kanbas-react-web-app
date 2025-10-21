@@ -1,6 +1,6 @@
 import SkeletonCard from "./skeleton-card";
 
-function SkeletonRow({ count = 6 }) {
+function SkeletonRow({ count = 5 }) {
     const skeletonItems = Array.from({ length: count }, (_, i) => i);
     console.log()
     return (
