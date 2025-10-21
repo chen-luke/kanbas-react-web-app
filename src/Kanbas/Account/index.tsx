@@ -6,7 +6,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 export default function Account() {
   return (
-    <div className="container-fluid d-flex ms-4 mt-4">
+    <div className="d-flex ms-4 mt-4 flex-col" style={{ height: '100vh' }}>
       <Routes>
         <Route path="/" element={<Navigate to="/Kanbas/Account/Signin" />} />
         <Route path="/Signin" element={<Signin />} />
