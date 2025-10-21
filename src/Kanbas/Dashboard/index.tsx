@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import CourseImage from "./course-image";
 import { CSSProperties, useEffect, useState, useRef } from "react";
+import SkeletonRow from "./SkeletonLoader/skeleton-row";
 
 function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCourse,
-  deleteCourse, updateCourse }: {
+  deleteCourse, updateCourse, loading }: {
     defaultHeader: boolean;
     courses: any[];
     course: {
@@ -18,6 +19,7 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
     addNewCourse: (e: React.FormEvent) => Promise<void>;
     deleteCourse: (course: any) => void;
     updateCourse: () => void;
+    loading: boolean
   }) {
 
   const formRef = useRef<HTMLHeadingElement | null>(null);
@@ -65,33 +67,35 @@ function Dashboard({ defaultHeader = true, courses, course, setCourse, addNewCou
       </form>
       <h2 className="mt-5">Published Courses ({courses.length})</h2> <hr />
       <div className="row">
-        <div className="row row-cols-1 row-cols-md-5 g-4 mt-0">
-          {courses.map((course: any) => (
-            <div key={course._id} className="col" style={{ width: 300 }}>
-              <div className="card">
-                <CourseImage courseName={course.name} courseId={course.number} />
-                <div className="card-body">
-                  <Link className="card-little" to={`/Kanbas/Courses/${course.id}/Home`}
-                    style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
-                    {course.name}
-                  </Link>
-                  <p className="card-next">{course.name}</p>
-                  <Link to={`/Kanbas/Courses/${course.id ?? course._id}/Home`} className="btn btn-primary">GO </Link>
-                  <button className="btn btn-light ms-2 border border-1" onClick={(event) => {
-                    event.preventDefault();
-                    setCourse(course);
-                    triggerFormFocusAnimation()
-                    scrollToForm(formRef);
-                  }}>Edit</button>
-                  <button className="btn btn-danger ms-2" onClick={(event) => {
-                    event.preventDefault();
-                    deleteCourse(course._id);
-                  }}>Delete</button>
+        {loading ?
+          <SkeletonRow /> :
+          <div className="row row-cols-1 row-cols-md-5 g-4 mt-0">
+            {courses.map((course: any) => (
+              <div key={course._id} className="col" style={{ width: 300 }}>
+                <div className="card">
+                  <CourseImage courseName={course.name} courseId={course.number} />
+                  <div className="card-body">
+                    <Link className="card-title" to={`/Kanbas/Courses/${course.id}/Home`}
+                      style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
+                      {course.name}
+                    </Link>
+                    <p className="card-next">{course.name}</p>
+                    <Link to={`/Kanbas/Courses/${course.id ?? course._id}/Home`} className="btn btn-primary">GO </Link>
+                    <button className="btn btn-light ms-2 border border-1" onClick={(event) => {
+                      event.preventDefault();
+                      setCourse(course);
+                      triggerFormFocusAnimation()
+                      scrollToForm(formRef);
+                    }}>Edit</button>
+                    <button className="btn btn-danger ms-2" onClick={(event) => {
+                      event.preventDefault();
+                      deleteCourse(course._id);
+                    }}>Delete</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>}
       </div>
     </div>
   );

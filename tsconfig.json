@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
+    "downlevelIteration": true, // This flag explicitly enables iteration support
     "lib": [
       "dom",
       "dom.iterable",

@@ -25,6 +25,7 @@ function getDate() {
 
 function Kanbas() {
 
+  const [loading, setLoading] = useState(false);
   const [courses, setCourses] = useState<any[]>([])
   const [course, setCourse] = useState({
     _id: "0", name: "New Course", number: "",
@@ -35,8 +36,10 @@ function Kanbas() {
   const COURSES_API = `${API_BASE}/api/courses`;
 
   const findAllCourses = async () => {
+    setLoading(true);
     const response = await axios.get(COURSES_API);
     setCourses(response.data);
+    setLoading(false);
   };
 
   const addNewCourse = async (e: React.FormEvent) => {
@@ -71,7 +74,7 @@ function Kanbas() {
 
   useEffect(() => {
     findAllCourses();
-  });
+  }, []);
 
   return (
     <Provider store={store}>
@@ -88,7 +91,8 @@ function Kanbas() {
               setCourse={setCourse}
               addNewCourse={addNewCourse}
               deleteCourse={deleteCourse}
-              updateCourse={updateCourse} />}></Route>
+              updateCourse={updateCourse}
+              loading={loading} />}></Route>
             <Route path="Courses/:courseId/*" element={<Courses />}></Route>
             <Route path="Courses/" element={<Dashboard
               defaultHeader={false}
@@ -98,6 +102,7 @@ function Kanbas() {
               addNewCourse={addNewCourse}
               deleteCourse={deleteCourse}
               updateCourse={updateCourse}
+              loading={loading}
             />}></Route>
           </Routes>
         </div>
