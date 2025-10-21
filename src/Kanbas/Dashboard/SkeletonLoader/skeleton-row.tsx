@@ -1,18 +1,17 @@
 import SkeletonCard from "./skeleton-card";
 
-function SkeletonRow({ count = 7 }) {
+function SkeletonRow({ count = 6 }) {
     const skeletonItems = Array.from({ length: count }, (_, i) => i);
-
+    console.log()
     return (
-        <div className="row row-cols-1 row-cols-md-5 g-4 mt-0">
+        <ul className="row row-cols-1 row-cols-md-5 g-4 mt-0 list-unstyled">
             {skeletonItems.map(i => (
-                <div key={i} className="col" style={{ width: '300px' }}>
+                <li key={i} className="col" style={{ width: '300px' }}>
                     <SkeletonCard />
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 }
-
 
 export default SkeletonRow;
